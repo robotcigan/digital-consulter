@@ -1,10 +1,22 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Work ({ workData }) {
   // console.log(workData.tags.map(tag => tag.name))
   console.log(workData.tags.length)
   return (
     <div className="case">
+      <div className="nav">
+        <Link href="/">
+          <a className="nav__link">Главная</a>
+        </Link>
+        <Link href="/works">
+          <a className="nav__link nav__link_active">Работы</a>
+        </Link>
+        <Link href="/contacts">
+          <a className="nav__link">Контакты</a>
+        </Link>
+      </div>
       <div className="wrapper">
         <div className="back">
           <img src="/img/icons/back.svg" alt=""/>
