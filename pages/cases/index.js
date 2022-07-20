@@ -1,8 +1,9 @@
 import Link from 'next/link'
+import Layout from "../../components/layout"
 
 export default function Cases() {
   return(
-    <>
+    <Layout>
       <div className="wrapper">
         <h1>Cases</h1>
         <ul>
@@ -13,6 +14,6 @@ export default function Cases() {
           </li>
         </ul>
       </div>
-    </>
+    </Layout>
   )
 }
