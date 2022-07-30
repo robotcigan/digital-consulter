@@ -18,23 +18,23 @@ export default function Work ({ workData }) {
             ))}
           </div>
           <div className="case__img">
-            <img src={`/img/cases/${workData.url}/1.png`} alt=""/>
+            <img src={`/img/works/${workData.url}/1.png`} alt=""/>
           </div>
           <h3>Подарочные карты</h3>
           <p>Помогу найти лучшее решение. Возможно вам нужно обновить сайт, или сделать логотип, или разработать сайт</p>
           <div className="case__img">
-            <img src={`/img/cases/${workData.url}/2.png`} alt=""/>
+            <img src={`/img/works/${workData.url}/2.png`} alt=""/>
           </div>
           <h3>Карточка товаров</h3>
           <p>Помогу найти лучшее решение. Возможно вам нужно обновить сайт, или сделать логотип, или разработать сайт</p>
           <div className="case__img">
-            <img src={`/img/cases/${workData.url}/3.png`} alt=""/>
+            <img src={`/img/works/${workData.url}/3.png`} alt=""/>
           </div>
           <div className="case__img">
-            <img src={`/img/cases/${workData.url}/4.png`} alt=""/>
+            <img src={`/img/works/${workData.url}/4.png`} alt=""/>
           </div>
           <div className="case__img">
-            <img src={`/img/cases/${workData.url}/5.png`} alt=""/>
+            <img src={`/img/works/${workData.url}/5.png`} alt=""/>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@ export default function Work ({ workData }) {
 }
 
 export async function getStaticPaths() {
-  const paths = ['/cases/stereo7', '/cases/haven-pets']
+  const paths = ['/work/stereo-7', '/work/haven-pets']
   return {
     paths,
     fallback: false
@@ -51,15 +51,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps ({ params }) {
-  const workData = {
-    name: "Stereo 7",
-    description: "",
-    tags: [
-      {id: 1, name: 'Дизайн'},
-      {id: 2, name: 'Доработки сайта'}
-    ],
-    url: params.name
-  }
+  const res = await fetch(`http://localhost:3000/api/work/${params.name}`)
+  const workData = await res.json()
   return {
     props: {
       workData

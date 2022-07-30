@@ -38,7 +38,7 @@ export default function Layout({ children, home }) {
           <Link href="/">
             <a className="nav__link">Главная</a>
           </Link>
-          <Link href="/cases">
+          <Link href="/works">
             <a className="nav__link">Работы</a>
           </Link>
           <Link href="/contacts">
