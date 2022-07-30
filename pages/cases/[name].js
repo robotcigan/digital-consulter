@@ -43,7 +43,7 @@ export default function Work ({ workData }) {
 }
 
 export async function getStaticPaths() {
-  const paths = ['/cases/stereo7']
+  const paths = ['/cases/stereo7', '/cases/haven-pets']
   return {
     paths,
     fallback: false
