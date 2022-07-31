@@ -1,5 +1,7 @@
 [
   {
+    "id": 1,
+    "color": "FFF6F1",
     "name": "Клиника Глазуновой",
     "url": "clinic-glazunova",
     "description": "some description",
@@ -7,6 +9,8 @@
     "img": ["1.png", "2.png", "3.png"]
   }, 
   {
+    "id": 2,
+    "color": "F0FFF2",
     "name": "Stereo 7",
     "url": "stereo-7",
     "description": "some description",
@@ -14,10 +18,13 @@
     "img": ["1.png", "2.png", "3.png"]
   },
   {
+    "id": 3,
+    "color": "F2F3FE",
     "name": "Haven pets",
     "url": "haven-pets",
     "description": "some description",
     "tags": ["Дизайн", "Логотип", "Консультации"],
-    "img": ["1.png"]
+    "img": ["1.png"],
+    "thumbnail": "thumbnail.png"
   }
 ]

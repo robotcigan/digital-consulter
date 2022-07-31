@@ -1,0 +1,35 @@
+.contacts-blocks
+  margin-top: 4rem
+
+.contacts-block
+  display: flex
+  position: relative
+  margin-bottom: 4rem
+  &:before
+    background-color: var(--light-bg-100)
+    border-radius: 1rem
+    content: ''
+    left: -1rem
+    height: calc(100% + 2rem)
+    opacity: 0
+    position: absolute
+    top: -1rem
+    transition: $transition
+    width: calc(100% + 2rem)
+    z-index: -1
+  &__img
+    margin-right: 2rem
+    img
+      +size(5rem)
+  &__text
+    margin-top: -.2rem
+    p
+      font-size: 4rem
+      line-height: 1
+      margin-bottom: 1rem
+    span
+      color: var(--light-text-secondary)
+  &:hover
+    &:before
+      opacity: 1
+  

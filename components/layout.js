@@ -30,9 +30,9 @@ export default function Layout({ children, home }) {
       <main className="page">
         {children}
       </main>
-      <footer className={'footer'}>
+      {/* <footer className={'footer'}>
         <div className="wrapper">footer</div>
-      </footer>
+      </footer> */}
       <div className="nav-container">
         <div className="nav">
           <Link href="/">

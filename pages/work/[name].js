@@ -2,7 +2,6 @@ import Link from 'next/link'
 import Layout from "../../components/layout";
 
 export default function Work ({ workData }) {
-  console.log(workData.tags.length)
   return (
     <Layout>
       <div className="case">
@@ -13,8 +12,8 @@ export default function Work ({ workData }) {
           <h1>{workData.name}</h1>
           <p>{workData.description}</p>
           <div className="tags">
-            {workData.tags.map(tag => (
-              <div className="tag" key={tag.id}>{tag.name}</div>
+            {workData.tags.map((tag, index) => (
+              <div className="tag" key={index}>{tag}</div>
             ))}
           </div>
           <div className="case__img">
@@ -43,7 +42,13 @@ export default function Work ({ workData }) {
 }
 
 export async function getStaticPaths() {
-  const paths = ['/work/stereo-7', '/work/haven-pets']
+  const res = await fetch(`http://localhost:3000/api/works`)
+  const workList = await res.json()
+  let paths = []
+  workList.forEach(work => {
+    paths.push(`/work/${work.url}`)
+  })
+
   return {
     paths,
     fallback: false
