@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Layout from "../components/layout"
 import WorkList from '../components/work-list'
 
-export default function Home() {
+export default function Home({ worksJSON }) {
   return (
     <Layout>
       <main>
@@ -16,7 +16,7 @@ export default function Home() {
           <h1>Консультирую бизнес и делаю дизайн</h1>
           <p>Помогу найти лучшее решение. Возможно вам нужно обновить сайт, или сделать логотип, или разработать сайт.</p>
           <p>Не всегда решение дорогое, иногда достаточно лендинга на тильде</p>
-          <WorkList />
+          <WorkList workList={worksJSON} />
         </div>
       </main>
 
@@ -24,4 +24,15 @@ export default function Home() {
       </footer>
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const res = await fetch("http://localhost:3000/api/works")
+  const worksJSON = await res.json()
+  // console.log('worksJSON', worksJSON)
+  return {
+    props: {
+      worksJSON
+    }
+  }
 }
