@@ -26,5 +26,15 @@
     "tags": ["Дизайн", "Логотип", "Консультации"],
     "img": ["1.png"],
     "thumbnail": "thumbnail.png"
+  },
+  {
+    "id": 4,
+    "color": "F8FBF6",
+    "name": "Heister",
+    "url": "heister",
+    "description": "some description",
+    "tags": ["Дизайн", "Логотип", "Консультации"],
+    "img": ["1.png", "2.png", "3.png"],
+    "thumbnail": "thumbnail.png"
   }
 ]

@@ -1,34 +1,11 @@
-const works = [
-  {
-    name: 'Клиника Глазуновой',
-    url: 'clinic-glazunova',
-    description: 'some description',
-    tags: ['Дизайн', 'Логотип', 'Консультации'],
-    img: ['1.png', '2.png', '3.png'],
-  }, 
-  {
-    name: 'Stereo 7',
-    url: 'stereo-7',
-    description: 'some description',
-    tags: ['Дизайн', 'Печатные материалы'],
-    img: ['1.png', '2.png', '3.png']
-  },
-  {
-    name: 'Haven pets',
-    url: 'haven-pets',
-    description: 'some description',
-    tags: ['Дизайн', 'Логотип', 'Консультации'],
-    img: ['1.png']
-  }
-]
+export default async function work(req, res) {
+  const workRes = await fetch(`http://localhost:3000/api/works`)
+  const workList = await workRes.json()
 
-export default function work(req, res) {
   const { url } = req.query
-  works.forEach(work => {
+  workList.forEach(work => {
     if (work.url === url) {
       res.status(200).json(work)
     } 
   })
-  console.log('where?')
-  res.status(404).send('err')
 }

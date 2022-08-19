@@ -6,9 +6,11 @@ export default function Work ({ workData }) {
     <Layout>
       <div className="case">
         <div className="wrapper">
-          <div className="back">
-            <img src="/img/icons/back.svg" alt=""/>
-          </div>
+          <Link href="/works">
+            <a className="back">
+              <img src="/img/icons/back.svg" alt=""/>
+            </a>
+          </Link>
           <h1>{workData.name}</h1>
           <p>{workData.description}</p>
           <div className="tags">
@@ -48,7 +50,6 @@ export async function getStaticPaths() {
   workList.forEach(work => {
     paths.push(`/work/${work.url}`)
   })
-
   return {
     paths,
     fallback: false
